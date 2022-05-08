@@ -23,9 +23,6 @@ int main()
       {
         cin >> a[i];
       }
-
-      for (j = 0; j < N; j++)
-      {
         for (i = 0; i < N; i++)
         {
           if (a[i] > a[i + 1])
@@ -34,7 +31,6 @@ int main()
             a[i] = a[i + 1] ;
             a[i + 1] = temp;
           }
-        }
       }
 
       cout << "Sorted array by bubble sort:" << endl;
