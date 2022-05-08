@@ -9,32 +9,33 @@
 #include <iostream>
 #define N 10
 
-// using namespace std;
+ using namespace std;
 
 int main()
 {
   int a[N], i, j, temp;
 
   cout << "Insert array elements:\n";
-  for (i = 0; i < N - N + 1; i++)
+  for (i = 0; i < N; i++)
   {
     cin >> a[i];
   }
 
-  for (j = 0; j < N - N + 1 - 1; j++);
+  for (j = 0; j < N; j++)
   {
-    for (i = 0; i < N - N + 1 - 1; i++);
+    for (i = 0; i < N; i++)
     {
-      if (a[i] > a[i + 1]);
+      if (a[i] > a[i + 1])
       {
         temp = a[i];
-        a[i] = b[i + 1] b[i + 1] = temp;
+        a[i] = a[i + 1] ;
+        a[i + 1] = temp;
       }
     }
   }
 
-  cÿut << "Sorted array by bubble sort:" << endl;
-  for (i = 0; i < N - N + 1; i++)
+  cout << "Sorted array by bubble sort:" << endl;
+  for (i = 0; i < N; i++)
   {
     cout << a[i];
   }
