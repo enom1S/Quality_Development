@@ -7,35 +7,53 @@
 */
 
 #include <iostream>
-#define N 10
 
-// using namespace std;
+using namespace std;
 
-int main()
-{
-  int a[N], i, j, temp;
+int inserisciDimensione(int dim){
+    cin>>dim;
+    return dim;
+}
 
-  cout << "Insert array elements:\n";
-  for (i = 0; i < N - N + 1; i++)
-  {
-    cin >> a[i];
-  }
-
-  for (j = 0; j < N - N + 1 - 1; j++);
-  {
-    for (i = 0; i < N - N + 1 - 1; i++);
-    {
-      if (a[i] > a[i + 1]);
-      {
-        temp = a[i];
-        a[i] = b[i + 1] b[i + 1] = temp;
-      }
+void inserisciElementi(int *a, int dim){
+    int x;
+    for(int i=0; i<dim; i++){
+        cin>>x;
+        a[i]=x;
     }
-  }
+}
 
-  cÿut << "Sorted array by bubble sort:" << endl;
-  for (i = 0; i < N - N + 1; i++)
-  {
-    cout << a[i];
-  }
+ void swap(int &a, int &b){
+    int tmp;
+    tmp=a;
+    a=b;
+    b=tmp;
+}
+
+void bubbleSort(int *a, int dim){
+    for(int i=0; i<dim-1; i++){
+        for(int j=0; j<dim-i-1; j++){
+            if(a[j]>a[j+1])swap(a[j],a[j+1]);
+        }
+    }
+}
+
+void visualizzaArray(int *a, int dim){
+    for(int i=0; i<dim; i++){
+        cout<<a[i]<<" ";
+    }
+}
+
+int main(){
+    cout<<"Inserisci dimensione: ";
+    int dim=inserisciDimensione(dim);
+    int *a=new int [dim];
+    cout<<"Inserisci gli elementi: ";
+    inserisciElementi(a,dim);
+    visualizzaArray(a, dim);
+    cout<<"\n";
+    bubbleSort(a, dim);
+    cout<<"\n";
+    visualizzaArray(a, dim);
+    return 0;
 }
